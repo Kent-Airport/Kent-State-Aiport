@@ -95,6 +95,8 @@ Label{
     text-align: left;
 }
 
+/*------------------Support Page-------------------*/
+
 .Figure-1, .Figure-2, .Figure-3{
     height: auto;
     width: 650px;
@@ -117,7 +119,6 @@ Label{
 
 .navlist, header, footer {
     background-color: #003976;
-    width: 100%;
     color: #fff;
     text-align: center;
     padding: 1em;
