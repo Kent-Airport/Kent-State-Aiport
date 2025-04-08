@@ -129,11 +129,11 @@ Label{
     justify-content: center;
     background-color: #003976;
     color: #fff;
-    width: 80%; /* Prevents full stretch */
-    margin: 20px auto; /* Centers navigation horizontally */
+    width: 80%; 
+    margin: 20px auto; 
     text-align: center;
     padding: 1em;
-    gap: 20px; /* Spacing between links */
+    gap: 20px;
 }
 
 .navlist a {
@@ -144,7 +144,7 @@ Label{
     font-weight: bold;
     padding: 10px;
     border-radius: 5px;
-    width: 50px; /* Fixed size for consistency */
+    width: 50px;
     height: 10px;
     display: inline-flex;
     align-items: center;
@@ -163,11 +163,11 @@ Label{
     text-align: center;
     font-weight: bold;
     padding: 20px;
-    /*border-radius: 5px;*/
-    width: 100%; /* Adjust as needed */
-    margin-bottom: 20px; /* Adds spacing below the alert */
+    width: 100%; 
+    margin-bottom: 20px; 
 }
 
+/*----------------------Flights Page-------------------*/
 #flightSearch{
     margin-top:5vh;
     margin-bottom:5vh;
