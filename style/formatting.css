@@ -59,7 +59,16 @@ main{
     width: 20%;
     margin: 0 auto;
     margin-top: 15px;
-    margin-bottom: 100px;
+    /*margin-bottom: 100px;*/
+}
+
+#SignupForm{
+    max-width: 100%;
+    padding: 50px;
+    width: 20%;
+    margin: 0 auto;
+    margin-top: 15px;
+    /*margin-bottom: 100px;*/
 }
 
 .login{
