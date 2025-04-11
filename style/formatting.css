@@ -28,13 +28,13 @@ header, footer {
 #Logo{
     height: auto;
     max-width: 100%;
-    width: 40vw;
+    width: 8vw;
 }
 
 #footerLogo{
     height: auto;
     max-width: 100%;
-    width: 200px;
+    width: 8vw;
 }
 
 main{
@@ -98,8 +98,14 @@ label {
 
 .Figure-1, .Figure-2, .Figure-3{
     height: auto;
-    width: 620px;
+    width: 32vw;
 }
+
+.plane-row td {
+    text-align: center;
+    vertical-align: middle;
+}
+
 
 .about{
     font-size:x-large;
@@ -182,7 +188,6 @@ label {
 #flightSearch{
     margin-top:5vh;
     margin-bottom:5vh;
-
     width:60vw;
     box-sizing: border-box;
     border-style: solid;
@@ -197,7 +202,6 @@ label {
 #allFlightsTable{
     width:80vw;
     margin-bottom:5vh;
-
     margin-left: 10vw;
     padding:0px;
     text-align: left;
@@ -242,7 +246,7 @@ html {
 .Figure1, .Figure2, .Figure3{
     max-width: 100%;
     height: auto;
-    width: 100px;
+    width: 5vw;
 }
 
 .Support1, .Support2, .Support3{
