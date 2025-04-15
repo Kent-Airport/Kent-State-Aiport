@@ -359,21 +359,105 @@ details {
 
 /*---------------Employee---------------*/
 
-#FlightCard{
-    background-color: white;
-    width:10vw;
-    height:20vh;
-}
+#job-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    border-radius: 1vw;
+    margin-bottom: 5%;
+    width: 60vw; 
+  }
+  
+  #job-details-table td {
+    padding: 10px 5px;
+  }
+  
+  #job-details-table .label {
+    font-weight: bold;
+    color: #1e3a8a;
+    width: 40%;
+  }
+  
+  #job-details-table .value {
+    color: #333;
+  }
 
-#FlightCardBackground{
-    position: fixed;
-    width: 100vw;
-    height:100vw;
-    background-color: rgba(0, 0, 0, 0.4);
-}
+  .welcome-section {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: turquoise;
+    color: black;
+    padding: 20px;
+    border-radius: 1vw;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .employee-info h1 {
+    margin: 5px 0;
+    font-size: 28px;
+  }
+  
+  .employee-info h3 {
+    margin: 0;
+    font-size: 18px;
+    opacity: 0.85;
+  }
+  
+  .employee-info p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    font-style: italic;
+  }
+  
+  .status-box, .reporting-to {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .status-box p,
+  .reporting-to p {
+    margin: 5px 0;
+  }
+  
+  .badge {
+    background-color: #10b981;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+  
+  .reporting-to ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0;
+  }
+  
+  .reporting-to li {
+    margin-bottom: 4px;
+  }
 
-.hidden{
-    display: none;
-}
+  .report-details{
+    font-weight: bolder;
+    font-size: large;
+  }
+  
+  .manager-details{
+    font-weight: bold;
+  }
 
-/*---------------Flights---------------*/
+  .manager-name{
+    font-style:italic;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .dashboard-employee{
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: xx-large;
+  }
