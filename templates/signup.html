@@ -1,0 +1,79 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kent State | Airport</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='formatting.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1>Kent State Airport</h1>
+        <img src="{{ url_for('static', filename='images/LogoCircle.png') }}" alt="KSU Logo" id="Logo">
+    </header>
+
+
+    <main>
+        
+        <section id="Login">
+            <h2 class="formTitle">SignUp</h2>
+            <form id="SignupForm" method="POST" action="/signup" onsubmit="CheckConfirm(event)">
+                
+                <label id="Label" for="username">Username:</label>
+                <input class="login" type="text" id="username" name="username" required>
+
+                <label id="Label" for="email">Email:</label>
+                <input class="login" type="email" id="email" name="email" required>
+
+                <label id="Label" for="first_name">First Name:</label>
+                <input class="login" type="text" id="first_name" name="first_name" required>
+
+                <label id="Label" for="first_name">Last Name:</label>
+                <input class="login" type="text" id="last_name" name="last_name" required>
+
+                <label id="Label" for="password">Password:</label>
+                <input class="login" type="password" id="password" name="password" required>
+                
+                <label id="Label" for="confirmPassword">Confirm Password:</label>
+                <input class="login" type="password" id="confirmPassword" name="confirmPassword" required>
+
+                <button type="submit">Create Account</button>
+            </form>
+        </section>
+            
+    </main>
+
+
+
+
+    <footer>
+        <img src="{{ url_for('static', filename='images/LogoFlat.png') }}" alt="footerLogo" id="footerLogo">
+        <p>&copy; 2025 Kent State University - All rights reserved.</p>
+    </footer>
+    <script>
+        function UsernameUsed(){
+            alert("Username already used")
+        }
+        function CheckConfirm(event){
+            var ConfirmPassword = document.getElementById("confirmPassword").value
+            var Password = document.getElementById("password").value
+            console.log("submitting")
+            if (ConfirmPassword !== Password) {
+                event.preventDefault();
+                alert("Passwords arent the same")
+            } else{
+                
+            }
+        }
+    </script>
+</body>
+</html>

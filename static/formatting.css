@@ -1,0 +1,485 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    padding: 0;
+    margin-top: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+header, footer {
+    background-color: #003976;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    font-family: 'EB Garamond', serif;
+}
+
+#Logo {
+    height: auto;
+    width: 12vw;
+    max-width: 120px;
+    min-width: 60px;
+}
+
+#footerLogo{
+    height: auto;
+    max-width: 100%;
+    width: 8vw;
+}
+
+main{
+    flex: 1;
+    text-align: center;
+}
+
+/*---------------Login Form----------------*/
+
+#LoginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 300px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+.formTitle {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+}
+
+.loginInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.loginSubmission {
+    width: 100%;
+    padding: 10px;
+    background-color: #003976;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.loginSubmission:hover {
+    background-color: turquoise;
+    color: black;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.formGroup label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.loginInput {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/*------------------Home Page-------------------*/
+
+.planePics{
+    margin-bottom: 50px;
+}
+
+.Figure-1, .Figure-2, .Figure-3{
+    height: auto;
+    width: 32vw;
+}
+
+.plane-row td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.about{
+    font-size:x-large;
+    font-weight: bold;
+}
+
+.search{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
+
+#search{
+    max-width: 100%;
+}
+
+.navlist, header, footer {
+    background-color: #003976;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    font-family: 'EB Garamond', serif;
+    width: 100%;
+}
+
+.navlist {
+    display: flex;
+    justify-content: center;
+    background-color: #003976;
+    color: #fff;
+    width: 80%; 
+    margin: 20px auto; 
+    text-align: center;
+    padding: 1em;
+    gap: 20px;
+}
+
+.navlist a {
+    color: black;
+    background-color: turquoise;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    width: 50px;
+    height: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navlist a:hover{
+    background: black;
+    color: white;
+    padding: 10px;
+}
+
+#alert-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    width: 1000px; 
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/*----------------------Flights Page-------------------*/
+#flightSearch{
+    margin-top:5vh;
+    margin-bottom:5vh;
+    width:60vw;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px;
+    border-collapse: collapse;
+    font-size: 1.5rem;
+    padding: .5rem;
+    background-color: lightgray;
+}
+
+#allFlightsTable{
+    width:80vw;
+    margin-bottom:5vh;
+    margin-left: 10vw;
+    padding:0px;
+    text-align: left;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    border-collapse: collapse;
+}
+
+#allFlightsTable th{
+    background-color:#003976;
+    color:white;
+    padding:5px;
+}
+
+#allFlightsTable td{
+    padding:5px;
+}
+
+#allFlightsTable tbody tr:hover{
+    background-color: turquoise;
+
+}
+
+#allFlightsTable tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray for even rows */
+}
+  
+#allFlightsTable tr:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+}
+
+
+
+/*------------------Customer Support-------------------*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+.Figure1, .Figure2, .Figure3{
+    max-width: 100%;
+    height: auto;
+    width: 5vw;
+}
+
+.Support1, .Support2, .Support3{
+    width: 90px;
+    height: 35px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.Description1, .Description2, .Description3{
+    font-size:x-large;
+    font-family: 'EB Garamond', serif;
+}
+
+#supportOptions table {
+    border-collapse: collapse; 
+    width: 100%; 
+  }
+
+  #supportOptions tr {
+    background-color: turquoise; 
+    border-radius: 10px;
+    height: 130px;
+    width: 600px;
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex; 
+    margin-bottom: 30px; 
+  }
+
+  #supportOptions td, #supportOptions th {
+    padding: 20px 100px 10px 10px;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  #SignupForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 300px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 0px;
+  }
+
+  #SignupForm Button{
+    margin-top: 2vh;
+  }
+  /*---------------------------*/
+
+  .line-container{
+    width: 400px;
+    margin: 0 auto;
+    border-top: 2px solid #FFB81C;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.phone-area, .email-area {
+    text-align: center; 
+    font-size: 18px; 
+    margin-top: 20px; 
+    color: black; 
+  }
+
+.titleHeading{
+    font-size: x-large;
+    color: #003976;
+}
+
+.MgrName{
+    font-size: large;
+    font-weight: bold;
+}
+
+/*--------------FAQS-----------------*/
+
+summary:hover {
+    color: #005bb5; /* Changes color on hover */
+}
+
+.answer{
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+summary {
+    font-size: 18px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    padding: 5px;
+    color: #0073e6; 
+}
+
+details {
+    margin-bottom: 30px; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    background-color: turquoise; 
+    padding: 10px; 
+}
+
+.faq-area {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/*---------------Employee---------------*/
+
+#job-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    border-radius: 1vw;
+    margin-bottom: 5%;
+    width: 60vw; 
+  }
+  
+  #job-details-table td {
+    padding: 10px 5px;
+  }
+  
+  #job-details-table .label {
+    font-weight: bold;
+    color: #1e3a8a;
+    width: 40%;
+  }
+  
+  #job-details-table .value {
+    color: #333;
+  }
+
+  .welcome-section {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: turquoise;
+    color: black;
+    padding: 20px;
+    border-radius: 1vw;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .employee-info h1 {
+    margin: 5px 0;
+    font-size: 28px;
+  }
+  
+  .employee-info h3 {
+    margin: 0;
+    font-size: 18px;
+    opacity: 0.85;
+  }
+  
+  .employee-info p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    font-style: italic;
+  }
+  
+  .status-box, .reporting-to {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .status-box p,
+  .reporting-to p {
+    margin: 5px 0;
+  }
+  
+  .badge {
+    background-color: #10b981;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+  
+  .reporting-to ul {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0;
+  }
+  
+  .reporting-to li {
+    margin-bottom: 4px;
+  }
+
+  .report-details{
+    font-weight: bolder;
+    font-size: large;
+  }
+  
+  .manager-details{
+    font-weight: bold;
+  }
+
+  .manager-name{
+    font-style:italic;
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .dashboard-employee{
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    font-size: xx-large;
+  }

@@ -1,0 +1,33 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    padding: 0;
+    margin-top: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+/* ^^^^^^^^^^^^^ */
+/*ALERT BOX*/
+
+
