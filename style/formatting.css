@@ -283,6 +283,21 @@ html {
     text-align: center;
   }
 
+  #SignupForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 300px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 0px;
+  }
+
+  #SignupForm Button{
+    margin-top: 2vh;
+  }
   /*---------------------------*/
 
   .line-container{
