@@ -104,7 +104,8 @@ def support():
 
 @app.route("/flights")
 def flights():
-    all_flights = Flight.query.order_by(Flight.departure_time).all()
+    data = Flight.query.order_by(Flight.departure_time).all()
+    all_flights = [{'flight_number': data.flight_number, 'departure_time': data.departure_time} for data in data]
     return render_template("flights.html", flights=all_flights)
 
 @app.route("/employee")
