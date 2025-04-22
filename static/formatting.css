@@ -132,10 +132,24 @@ label {
     vertical-align: middle;
 }
 
+.carousel {
+  width:10vw !important;
+  left:0px;
+  overflow: hidden;
+}
+.carousel img{
+  width:33.4vw;
+}
+
+#takeoffImage{
+  width:60%;
+}
 
 .about{
     font-size:x-large;
     font-weight: bold;
+    word-wrap: break-word;
+    
 }
 
 .search{
@@ -393,6 +407,13 @@ details {
     align-items: center;
     justify-content: center;
     z-index: 9999;
+    font-size: large;
+  }
+
+  .card-overlay button{
+    width:80%;
+    font-size: large;
+    border-radius: 5px;
   }
 
 .flight-card {
