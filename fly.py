@@ -31,8 +31,21 @@ class Flight(db.Model):
     arrival_time = db.Column(db.DateTime, nullable=False)
     departure_airport = db.Column(db.String(100), nullable=False)
     arrival_airport = db.Column(db.String(100), nullable=False)
-    aircraft_registration = db.Column(db.String(20), nullable=False)
+    aircraft_registration = db.Column(
+        db.String(20), 
+        db.ForeignKey('Aircrafts.registration'),  # FK reference
+        nullable=False
+    )
 
+    aircraft = db.relationship('Aircrafts', backref='flights')
+
+class Aircrafts(db.Model):
+    __tablename__ = 'Aircrafts'
+    registration = db.Column(db.String(20), primary_key=True)
+    aircraft_type = db.Column(db.String(50))
+    msn = db.Column(db.String(50))
+    age = db.Column(db.Integer)
+    seats = db.Column(db.Integer)
 # ---------------------- Routes ---------------------- #
 
 @app.route("/")

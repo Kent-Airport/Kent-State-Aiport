@@ -44,8 +44,8 @@
             </tbody>
             </table>
         </div>
-        <div class="card-overlay">
-            <div class="flight-card">
+        <div id="cardOverlay" class="card-overlay">
+            <div class="flight-card ">
                 <img id="takeoffImage" src="{{ url_for('static', filename='images/Takeoff.png') }}">
                 <h2>Selected Flight: AA1C</h2>
                 <p>Pilot: Me</p>
@@ -76,6 +76,17 @@
             dd.textContent=DD;
             dest.textContent=Dest;
         }
+
+        function HideCard(){
+            document.getElementById("cardOverlay").style.display = "none";
+        }
+        HideCard();
+
+        function ShowCard(){
+            document.getElementById("cardOverlay").style.display = "flex";
+
+        }
+
         //12 entries of dummy data that would be replaced by reading the database and adding them with a foreach
         AddFlight("Delta", "737", "05/12/25", "Cleveland");
         AddFlight("American Airlines", "A320", "06/15/25", "New York");
