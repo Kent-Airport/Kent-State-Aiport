@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
 </head>
 
-<body class="locked">
+<body class="">
 
     <header>
         <h1>Kent State Airport</h1>
@@ -48,10 +48,12 @@
             <div class="flight-card ">
                 <img id="takeoffImage" src="{{ url_for('static', filename='images/Takeoff.png') }}">
                 <h2>Selected Flight: AA1C</h2>
-                <p>Pilot: Me</p>
-                <p>Departure Time: 8:03</p>
+                <p id="pilotName">Pilot: Me</p>
+                <p id="departTime">Departure Time: 8:03</p>
                 <p>Destination</p>
                 <button>Book Flight</button>
+                <button onclick="HideCard()">Cancel</button>
+
             </div>
         </div>
     </main>
@@ -60,9 +62,10 @@
         <p>&copy; 2025 Kent State University - All rights reserved.</p>
     </footer>
     <script>
-        //var flights_arr = {{ flights }};
-        //console.log(flights_arr);
-        function AddFlight(Airline, Plane, DD, Dest){
+        
+        var flights_arr=JSON.parse('{{ flights | safe }}');
+        console.log(flights_arr);
+        function AddFlight(Airline, Plane, DD, Dest, Pilot){
             var table = document.getElementById("allFlightsTable");
             var flightEntry = table.insertRow();
 
@@ -71,39 +74,43 @@
             var dd = flightEntry.insertCell(2);
             var dest = flightEntry.insertCell(3);
 
+            flightEntry.dataset.pilotName=Pilot;
+
             airline.textContent=Airline;
             plane.textContent=Plane;
             dd.textContent=DD;
             dest.textContent=Dest;
+            flightEntry.addEventListener("click", function () {
+                document.getElementById("pilotName").textContent = flightEntry.dataset.pilotName;
+                ShowCard();
+            });
         }
 
         function HideCard(){
             document.getElementById("cardOverlay").style.display = "none";
+            document.body.classList.remove("locked");
         }
         HideCard();
 
         function ShowCard(){
             document.getElementById("cardOverlay").style.display = "flex";
-
+            document.body.classList.add("locked");
         }
 
+        function PopulateFlights(){
+            flights_arr.forEach(i => {
+                AddFlight(i.flight_number, i.aircraft_type, i.departure_time, i.arrival_airport, i.pilot_name)
+                console.log(i.arrival_airport)
+            });
+        }
+        PopulateFlights();
         //12 entries of dummy data that would be replaced by reading the database and adding them with a foreach
-        AddFlight("Delta", "737", "05/12/25", "Cleveland");
-        AddFlight("American Airlines", "A320", "06/15/25", "New York");
-        AddFlight("United", "777", "07/20/25", "Chicago");
-        AddFlight("Southwest", "737", "08/10/25", "Dallas");
-        AddFlight("JetBlue", "A321", "09/05/25", "Boston");
-        AddFlight("Alaska Airlines", "737", "10/01/25", "Seattle");
-        AddFlight("Spirit Airlines", "A319", "11/14/25", "Miami");
-        AddFlight("Air Canada", "A330", "12/23/25", "Toronto");
-        AddFlight("Hawaiian Airlines", "A321", "01/05/26", "Honolulu");
-        AddFlight("Lufthansa", "A350", "02/16/26", "Frankfurt");
-        AddFlight("British Airways", "747", "03/12/26", "London");
-        AddFlight("Emirates", "A380", "04/18/26", "Dubai");
+       
     </script>
 
 <hr>
 <h2> flight data </h2>
+<!--
 <table>
     <thead>
         <tr>
@@ -126,7 +133,8 @@
             <td>{{ flight.arrival_time }}</td>
             <td>{{ flight.departure_airport }}</td>
             <td>{{ flight.arrival_airport }}</td>
-            <td>{{ flight.aircraft_registration }}</td>
+            <td>{{ flight.aircraft_registration }}</td>aircraft_type
+            <td>{{ flight.aircraft_type }}</td>
             <td>{{ flight.layover_airport or 'N/A' }}</td>
             <td>{{ flight.layover_start or 'N/A' }}</td>
             <td>{{ flight.layover_end or 'N/A' }}</td>
@@ -134,6 +142,6 @@
         {% endfor %}
     </tbody>
 </table>
-
+-->
 </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, make_response
+from flask import Flask, render_template, request, redirect, make_response, jsonify, json
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 import uuid
@@ -31,12 +31,14 @@ class Flight(db.Model):
     arrival_time = db.Column(db.DateTime, nullable=False)
     departure_airport = db.Column(db.String(100), nullable=False)
     arrival_airport = db.Column(db.String(100), nullable=False)
+    pilot_name = db.Column(db.String(50), nullable=False)
+
     aircraft_registration = db.Column(
         db.String(20), 
         db.ForeignKey('Aircrafts.registration'),  # FK reference
         nullable=False
     )
-
+    
     aircraft = db.relationship('Aircrafts', backref='flights')
 
 class Aircrafts(db.Model):
@@ -118,8 +120,15 @@ def support():
 @app.route("/flights")
 def flights():
     data = Flight.query.order_by(Flight.departure_time).all()
-    all_flights = [{'flight_number': data.flight_number, 'departure_time': data.departure_time} for data in data]
-    return render_template("flights.html", flights=all_flights)
+    all_flights = [
+        {
+         'flight_number': data.flight_number,
+         'departure_time': data.departure_time,
+         'aircraft_type' : data.aircraft.aircraft_type,
+         'arrival_airport' : data.arrival_airport,
+         'pilot_name' : data.pilot_name
+        } for data in data ]
+    return render_template("flights.html", flights=json.dumps(all_flights))
 
 @app.route("/employee")
 def employee():
