@@ -400,6 +400,12 @@ details {
     margin: 20px;
 }
 
+#book:hover{
+  background-color: lightgreen;
+}
+#cancel:hover{
+  background-color: lightcoral;
+}
 .card-overlay {
     position: fixed;
     top: 0;

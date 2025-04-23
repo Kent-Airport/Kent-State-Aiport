@@ -32,7 +32,7 @@
         </nav>
     </header>
     <main>
-        <input placeholder="Search Flights" id="flightSearch"></input>
+        <input placeholder="Search Flights" id="flightSearch" onkeyup="filterFlights()"></input>
         <div id="allFlights">
             <table id="allFlightsTable">
                 <tbody>
@@ -40,19 +40,18 @@
                 <th>Plane</th>
                 <th>Departure Date</th>
                 <th>Destination</th>
-                
-            </tbody>
+                </tbody>
             </table>
         </div>
         <div id="cardOverlay" class="card-overlay">
             <div class="flight-card ">
                 <img id="takeoffImage" src="{{ url_for('static', filename='images/Takeoff.png') }}">
-                <h2>Selected Flight: AA1C</h2>
+                <h2  id="selectedFlight">Selected Flight: AA1C</h2>
                 <p id="pilotName">Pilot: Me</p>
                 <p id="departTime">Departure Time: 8:03</p>
-                <p>Destination</p>
-                <button>Book Flight</button>
-                <button onclick="HideCard()">Cancel</button>
+                <p id="destination">Destination</p>
+                <button id="book" style="margin-bottom:1vh;" onclick="BookFlight()">Book Flight</button>
+                <button id="cancel" onclick="HideCard()">Cancel</button>
 
             </div>
         </div>
@@ -81,9 +80,41 @@
             dd.textContent=DD;
             dest.textContent=Dest;
             flightEntry.addEventListener("click", function () {
-                document.getElementById("pilotName").textContent = flightEntry.dataset.pilotName;
+                if(flightEntry.dataset.pilotName == "null"){
+                    document.getElementById("pilotName").textContent = "Pilot: UNCONFIRMED";
+                } else{
+                    document.getElementById("pilotName").textContent = "Pilot: " + flightEntry.dataset.pilotName;
+                }
+                document.getElementById("selectedFlight").textContent = "Flight Selected: " + flightEntry.cells[0].textContent;
+                document.getElementById("departTime").textContent = "Departure Time: " + flightEntry.cells[2].textContent;
+                document.getElementById("destination").textContent = "Destination: " + flightEntry.cells[3].textContent;
+
                 ShowCard();
             });
+        }
+
+        function filterFlights() {
+            const input = document.getElementById("flightSearch");
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById("allFlightsTable");
+            const rows = table.getElementsByTagName("tr");
+
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                let match = false;
+
+                // Check each cell for a match
+                for (let j = 0; j < row.cells.length; j++) {
+                    const cellText = row.cells[j].textContent.toLowerCase();
+                    if (cellText.includes(filter)) {
+                        match = true;
+                        break;
+                    }
+                }
+
+                // Show or hide the row
+                row.style.display = match ? "" : "none";
+            }
         }
 
         function HideCard(){
@@ -102,6 +133,12 @@
                 AddFlight(i.flight_number, i.aircraft_type, i.departure_time, i.arrival_airport, i.pilot_name)
                 console.log(i.arrival_airport)
             });
+        }
+
+        function BookFlight()
+        {
+            alert('Payment sequence and confirmation');
+            HideCard();
         }
         PopulateFlights();
         //12 entries of dummy data that would be replaced by reading the database and adding them with a foreach
